@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Groceries",
+    "category": "Food",
+    "amount": 86.4,
+    "date": "2026-03-28",
+    "description": "Weekly grocery run"
+  },
+  {
+    "title": "Bus Card Recharge",
+    "category": "Transport",
+    "amount": 35,
+    "date": "2026-03-30",
+    "description": "Monthly top-up"
+  },
+  {
+    "title": "Streaming Subscription",
+    "category": "Entertainment",
+    "amount": 14.99,
+    "date": "2026-04-01",
+    "description": "Monthly plan"
+  }
+]

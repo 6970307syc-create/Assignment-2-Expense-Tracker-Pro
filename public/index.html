@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker SPA</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Expense Tracker</h1>
+        <p>Track spending with instant updates and category insights.</p>
+      </header>
+
+      <section class="card">
+        <h2 id="form-title">Add Expense</h2>
+        <form id="expense-form">
+          <div class="grid">
+            <label>
+              Title
+              <input type="text" name="title" required />
+            </label>
+            <label>
+              Category
+              <input type="text" name="category" required />
+            </label>
+            <label>
+              Amount
+              <input type="number" name="amount" min="0" step="0.01" required />
+            </label>
+            <label>
+              Date
+              <input type="date" name="date" required />
+            </label>
+          </div>
+          <label>
+            Description
+            <textarea name="description" rows="2" placeholder="Optional notes..."></textarea>
+          </label>
+          <div class="actions">
+            <button type="submit" id="submit-btn">Save Expense</button>
+            <button type="button" id="cancel-btn" class="secondary hidden">Cancel Edit</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Expenses</h2>
+        <p id="status" class="status" aria-live="polite"></p>
+        <div id="expense-list" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Summary</h2>
+        <div class="summary-grid">
+          <div>
+            <h3>By Category</h3>
+            <ul id="category-summary"></ul>
+          </div>
+          <div>
+            <h3>Monthly Trend</h3>
+            <ul id="monthly-summary"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
