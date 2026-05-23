@@ -53,19 +53,19 @@ All interactions are handled by JavaScript and API requests, so the page does no
 ## 7) Folder Structure
 ```text
 .
-├── public/
-│   ├── index.html
-│   ├── style.css
-│   └── app.js
-├── data/
-│   ├── sample-users.json
-│   ├── sample-expenses.json
-│   └── sample-activities.json
-├── server.js
-├── package.json
-├── package-lock.json
-├── .env.example
-└── README.md
++-- public/
+|   +-- index.html
+|   +-- style.css
+|   +-- app.js
++-- data/
+|   +-- sample-users.json
+|   +-- sample-expenses.json
+|   +-- sample-activities.json
++-- server.js
++-- package.json
++-- package-lock.json
++-- .env.example
++-- README.md
 ```
 
 ## 8) How to Run
@@ -84,12 +84,15 @@ All interactions are handled by JavaScript and API requests, so the page does no
    http://localhost:3000
    ```
 
-If the database is empty, the app creates a default admin account:
+If the database is empty, the app creates an admin account from `.env`.
+For local testing, the example `.env` values are:
 
 ```text
 Email: admin@example.com
 Password: admin123
 ```
+
+These are only demo values. For a real deployment, `JWT_SECRET` and `ADMIN_PASSWORD` should be changed in `.env`.
 
 ## 9) Workload Allocation
 This is my individual assignment submission.

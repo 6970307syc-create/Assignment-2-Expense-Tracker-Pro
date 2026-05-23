@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
+const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -11,7 +12,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/expense_tracker_plus';
-const JWT_SECRET = process.env.JWT_SECRET || 'development-only-change-me';
+const JWT_SECRET = process.env.JWT_SECRET || crypto.randomBytes(32).toString('hex');
 const EXPENSE_CATEGORIES = ['Food', 'Transport', 'Housing', 'Utilities', 'Study', 'Health', 'Entertainment', 'Other'];
 
 app.use(cors());
@@ -498,7 +499,7 @@ const seedAdmin = async () => {
   if (existingUsers > 0) return;
 
   const email = process.env.ADMIN_EMAIL || 'admin@example.com';
-  const password = process.env.ADMIN_PASSWORD || 'admin123';
+  const password = process.env.ADMIN_PASSWORD || crypto.randomBytes(9).toString('base64url');
   const passwordHash = await bcrypt.hash(password, 12);
   const admin = await User.create({ name: 'Default Admin', email, passwordHash, role: 'admin', monthlyBudget: 2500 });
   await logActivity({ user: admin._id, action: 'seed_admin', entity: 'user', entityId: admin._id, details: `Created ${email}` });
