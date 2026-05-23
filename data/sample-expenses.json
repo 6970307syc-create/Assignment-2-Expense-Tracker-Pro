@@ -4,20 +4,23 @@
     "category": "Food",
     "amount": 86.4,
     "date": "2026-03-28",
-    "description": "Weekly grocery run"
+    "description": "Weekly grocery run",
+    "ownerEmail": "admin@example.com"
   },
   {
     "title": "Bus Card Recharge",
     "category": "Transport",
     "amount": 35,
     "date": "2026-03-30",
-    "description": "Monthly top-up"
+    "description": "Monthly top-up",
+    "ownerEmail": "student@example.com"
   },
   {
     "title": "Streaming Subscription",
     "category": "Entertainment",
     "amount": 14.99,
     "date": "2026-04-01",
-    "description": "Monthly plan"
+    "description": "Monthly plan",
+    "ownerEmail": "student@example.com"
   }
 ]

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Default Admin",
+    "email": "admin@example.com",
+    "role": "admin",
+    "monthlyBudget": 2500,
+    "isActive": true
+  },
+  {
+    "name": "Student User",
+    "email": "student@example.com",
+    "role": "user",
+    "monthlyBudget": 1200,
+    "isActive": true
+  }
+]

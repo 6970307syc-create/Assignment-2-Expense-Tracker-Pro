@@ -1,0 +1,20 @@
+[
+  {
+    "action": "login",
+    "entity": "auth",
+    "details": "admin@example.com signed in",
+    "note": ""
+  },
+  {
+    "action": "create_expense",
+    "entity": "expense",
+    "details": "Groceries",
+    "note": ""
+  },
+  {
+    "action": "admin_note",
+    "entity": "activity",
+    "details": "Checked demo data before submission",
+    "note": "Manual activity record created by an admin"
+  }
+]

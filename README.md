@@ -1,39 +1,54 @@
-# Expense Tracker SPA - Assignment 1 Base
+# Assignment 2 Expense Tracker Pro
 
 ## 1) Project Title
-**Expense Tracker SPA**
+**Expense Tracker Pro**
 
 ## 2) Project Description
-This is the Assignment 1 base project for my expense tracker website. It is a single-page dynamic web application where users can add, view, update, and delete expense records with MongoDB as the database.
+This project is extended from my Assignment 1 expense tracker. The original version only allowed users to manage expense items. In this Assignment 2 version, I added user login, JWT authentication, admin functions, live search, and user activity records.
 
-This repository is prepared as the clean starting version before extending the project for Assignment 2.
+The website helps users record daily expenses and check spending summaries. Admin users can also manage user accounts and view activity records.
 
 ## 3) Technical Stack
 - **Frontend:** HTML, CSS, Vanilla JavaScript
 - **Backend:** Node.js + Express
 - **Database:** MongoDB + Mongoose
-- **Routing:** Express API routes
-- **Interface:** Single-page application behavior
+- **Authentication:** bcrypt password hashing + JWT
+- **Interface:** Single-page application
 
 ## 4) Main Features
-- Add new expense items
-- View all expense records
-- Edit existing expense records
-- Delete expense records
-- View spending summary by category
-- View monthly spending trend
-- Basic validation and status messages
-- Responsive page layout
+- Register and login with JWT authentication
+- Passwords are stored with bcrypt hashing
+- Add, view, edit, and delete expense records
+- Live search for expense items
+- Expense category dropdown
+- User profile update
+- Admin can create, edit, disable, and delete user accounts
+- Admin can view, add, edit, and delete user activity records
+- Delete confirmation and error messages
+- Responsive layout for different screen sizes
 
-## 5) CRUD Mapping
-- **Create:** `POST /api/expenses`
-- **Read:** `GET /api/expenses`
-- **Update:** `PUT /api/expenses/:id`
-- **Delete:** `DELETE /api/expenses/:id`
+## 5) Entity and CRUD Mapping
+### User
+- **Create:** register account or admin creates user
+- **Read:** admin views all users
+- **Update:** user updates profile or admin updates account
+- **Delete:** admin deletes user account
+
+### Expense
+- **Create:** user adds expense
+- **Read:** user views expense list and summaries
+- **Update:** user edits expense
+- **Delete:** user deletes expense
+
+### User Activity
+- **Create:** system creates activity logs, admin can add notes
+- **Read:** admin views activity list
+- **Update:** admin edits activity note/details
+- **Delete:** admin deletes activity record
 
 ## 6) Single Page Application
-The project uses only one main HTML file: `public/index.html`.
-All data changes are handled by JavaScript `fetch()` requests, and the page updates dynamically without loading another HTML page.
+The app uses one main page: `public/index.html`.
+All interactions are handled by JavaScript and API requests, so the page does not need to reload or move to another HTML file.
 
 ## 7) Folder Structure
 ```text
@@ -43,9 +58,12 @@ All data changes are handled by JavaScript `fetch()` requests, and the page upda
 │   ├── style.css
 │   └── app.js
 ├── data/
-│   └── sample-expenses.json
+│   ├── sample-users.json
+│   ├── sample-expenses.json
+│   └── sample-activities.json
 ├── server.js
 ├── package.json
+├── package-lock.json
 ├── .env.example
 └── README.md
 ```
@@ -57,7 +75,7 @@ All data changes are handled by JavaScript `fetch()` requests, and the page upda
    ```
 2. Create `.env` from `.env.example`.
 3. Make sure MongoDB is running.
-4. Start the server:
+4. Start the app:
    ```bash
    npm run dev
    ```
@@ -66,8 +84,17 @@ All data changes are handled by JavaScript `fetch()` requests, and the page upda
    http://localhost:3000
    ```
 
-## 9) Database Export
-Example data is included in `data/sample-expenses.json`.
+If the database is empty, the app creates a default admin account:
 
-## 10) Note
-This is the clean Assignment 1 foundation. Assignment 2 will be built on top of this base by adding login, JWT authentication, user roles, live search, and more database entities.
+```text
+Email: admin@example.com
+Password: admin123
+```
+
+## 9) Workload Allocation
+This is my individual assignment submission.
+
+- **6970307syc-create:** `server.js`, `public/index.html`, `public/style.css`, `public/app.js`, `data/*.json`, `.env.example`, `package.json`, `README.md`
+
+## 10) Notes
+This Assignment 2 version is built on the Assignment 1 base. The main improvement is that the project now has three database entities, authentication, role-based admin features, and smoother frontend interaction.
