@@ -90,8 +90,8 @@ const renderAuth = () => {
       </div>
       <form id="login-form" class="stack">
         <h2>Sign in</h2>
-        <label>Email<input type="email" name="email" value="admin@example.com" required /></label>
-        <label>Password<input type="password" name="password" value="admin123" required /></label>
+        <label>Email<input type="email" name="email" placeholder="admin@example.com" required /></label>
+        <label>Password<input type="password" name="password" placeholder="Enter password" required /></label>
         <button type="submit">Sign in</button>
         <p id="auth-status" class="status" aria-live="polite"></p>
       </form>
