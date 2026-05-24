@@ -61,6 +61,7 @@ const api = async (path, options = {}) => {
 const persistSession = ({ token, user }) => {
   state.token = token;
   state.user = user;
+  state.activeTab = 'expenses';
   localStorage.setItem('token', token);
   localStorage.setItem('user', JSON.stringify(user));
 };
@@ -74,6 +75,7 @@ const signOut = async (notifyServer = true) => {
   state.token = null;
   state.user = null;
   state.expenses = [];
+  state.activeTab = 'expenses';
   render();
 };
 
@@ -320,6 +322,9 @@ const render = () => {
 
   authView.classList.add('hidden');
   appView.classList.remove('hidden');
+  if (state.user.role !== 'admin' && state.activeTab === 'admin') {
+    state.activeTab = 'expenses';
+  }
   currentUserEl.textContent = `${state.user.name} (${state.user.role})`;
   adminTab.classList.toggle('hidden', state.user.role !== 'admin');
 
