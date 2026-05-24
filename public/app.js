@@ -421,14 +421,20 @@ document.addEventListener('submit', async (event) => {
 
 document.addEventListener('input', (event) => {
   if (event.target.id === 'expense-search') {
+    const cursorPosition = event.target.selectionStart;
     state.expenseSearch = event.target.value;
     renderExpensePanel();
-    document.getElementById('expense-search')?.focus();
+    const searchInput = document.getElementById('expense-search');
+    searchInput?.focus();
+    searchInput?.setSelectionRange(cursorPosition, cursorPosition);
   }
   if (event.target.id === 'activity-search') {
+    const cursorPosition = event.target.selectionStart;
     state.activitySearch = event.target.value;
     renderAdminPanel();
-    document.getElementById('activity-search')?.focus();
+    const searchInput = document.getElementById('activity-search');
+    searchInput?.focus();
+    searchInput?.setSelectionRange(cursorPosition, cursorPosition);
   }
 });
 
